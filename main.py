@@ -1,4 +1,5 @@
 import os
+import pygame
 os.system ("clear")
 
 class Board():
