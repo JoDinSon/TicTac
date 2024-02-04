@@ -48,6 +48,9 @@ class Board():
             
 
 
+
+
+
 board = Board()
 count = 0
 def check_winner():
@@ -96,6 +99,8 @@ def refresh_screen():
     #Show the board
     board.display()
 
+
+pygame.init()
 
 while True:
     refresh_screen()
