@@ -100,7 +100,6 @@ def refresh_screen():
     board.display()
 
 
-pygame.init()
 
 while True:
     refresh_screen()
