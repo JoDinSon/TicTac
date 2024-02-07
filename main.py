@@ -42,45 +42,38 @@ class Board():
             return True
         else:
             return False
-        
+    
 
 
-            
-
-
-
-
-
-board = Board()
-count = 0
-def check_winner():
-    #iterate through all cells
-    for i in range(3):
-        for j in range(3):
-            current_cell = board.cells[i][j]
-            # iterater over current_cells vicinity
-            if current_cell != " ":
-                for k in [-1, 0, 1]:
-                    for l in [-1, 0, 1]:
-                        # check wether vicinity indices are out of bound
-                        if i + k in range(3) and j + l in range(3):
-                            m, n = i + k, j + l
-                            # check wether current_cell has equal cell in vicinity
-                            # avoid that current_cell is compared with itself with second conditional statement
-                            if current_cell == board.cells[m][n] and (k != 0 or l != 0):
-                                #check wether indices of next cell in same direction are out fo bound
-                                if m + k in range(3) and n + l in range(3):
-                                    # check wether next cell is also equal to current cell
-                                    if current_cell == board.cells[m+k][n+l]:
-                                        # if so a Winner is found!
-                                        #print("Winner %s" %(current_cell))
-                                        #print("[%i, %i]" %(i, j))
-                                        #print("[%i, %i]" %(m, n))
-                                        #print("[%i, %i]" %(m+k, n+l))
-                                        return current_cell
-    return 
+    def check_winner():
+        #iterate through all cells
+        for i in range(3):
+            for j in range(3):
+                current_cell = board.cells[i][j]
+                # iterater over current_cells vicinity
+                if current_cell != " ":
+                    for k in [-1, 0, 1]:
+                        for l in [-1, 0, 1]:
+                            # check wether vicinity indices are out of bound
+                            if i + k in range(3) and j + l in range(3):
+                                m, n = i + k, j + l
+                                # check wether current_cell has equal cell in vicinity
+                                # avoid that current_cell is compared with itself with second conditional statement
+                                if current_cell == board.cells[m][n] and (k != 0 or l != 0):
+                                    #check wether indices of next cell in same direction are out fo bound
+                                    if m + k in range(3) and n + l in range(3):
+                                        # check wether next cell is also equal to current cell
+                                        if current_cell == board.cells[m+k][n+l]:
+                                            # if so a Winner is found!
+                                            #print("Winner %s" %(current_cell))
+                                            #print("[%i, %i]" %(i, j))
+                                            #print("[%i, %i]" %(m, n))
+                                            #print("[%i, %i]" %(m+k, n+l))
+                                            return current_cell
+        return 
                                
 #print("winner: %s" %(check_winner()))
+
 
 
 def print_header():
@@ -93,15 +86,14 @@ def refresh_screen():
     #Print the header
     print_header()
 
-    
-    #print("Winner: %s" %(check_winner()))
-
     #Show the board
     board.display()
 
 
+#GameLoop
 
 while True:
+
     refresh_screen()
 
     #Get X input
@@ -128,7 +120,7 @@ while True:
         print("\nUnentschieden\n")
         break
 
-    if check_winner() == "X":
+    if board.check_winner() == "X":
         print("\n Der Gewinner ist X\n")
         break
 
@@ -156,7 +148,7 @@ while True:
     refresh_screen()
 
 
-    if check_winner() == "O":
+    if board.check_winner() == "O":
         print("Der Gewinner ist O\n")
         break
 

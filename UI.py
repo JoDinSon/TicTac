@@ -1,5 +1,5 @@
 import pygame
-# can I now commit from here?
+
 # initalize pygame
 pygame.init()
 
@@ -32,11 +32,11 @@ class field:
         self.rect = pygame.Rect(self.pos_x, self.pos_y, self.width, self.height)
         pygame.draw.rect(screen, BLACK, [self.pos_x, self.pos_y, self.width, self.height], 3)
     #highlight if mouse hovers over current field
-    def check_click(self, mouse):
+    def check_click(self, mouse, ev):
         
         if self.rect.collidepoint(mouse):
             pygame.draw.rect(screen, ORANGE, [self.pos_x + 3, self.pos_y + 3, self.width - 4, self.height - 4], 2)
-            for event in pygame.event.get():
+            for event in ev:
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     print("mouse was clicked")
                     self.draw_x()
@@ -78,7 +78,9 @@ for i in range(3):
 
 active = True
 while active:
-    for event in pygame.event.get():
+    # put all events in a ev variable
+    ev = pygame.event.get()
+    for event in ev:
         if event.type == pygame.QUIT:
             active = False
 
@@ -99,7 +101,8 @@ while active:
     pygame.draw.ellipse(screen, BLUE, [215, 15, 70, 70], 6)
 
     for i in range(len(fields)):
-        fields[i].check_click(pygame.mouse.get_pos())
+        # call ceck_click method on all fields and give it the mouse position and the event list
+        fields[i].check_click(pygame.mouse.get_pos(), ev)
 
 
   
