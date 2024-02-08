@@ -58,7 +58,7 @@ class field:
     
     def draw_o(self):
         # draw circle
-        pygame.draw.ellipse(screen, BLUE, [215, 15, 70, 70], 6)
+        pygame.draw.ellipse(screen, BLUE, [self.pos_x + 15, self.pos_y + 15, 70, 70], 6)
 
 
 

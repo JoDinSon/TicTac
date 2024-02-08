@@ -45,17 +45,24 @@ while active:
             board.update_board(i + 1, player)
             if board.is_full():
                 print("\nUnentschieden\n")
+                active = False
                 break
 
             if board.check_winner() == "X":
                 print("\n Der Gewinner ist X\n")
+                active = False
                 break
 
-        # switch player
-        if player == "X":
-            player = "O"
-        elif player == "O":
-            player = "X"
+            if board.check_winner() == "O":
+                print("\nDer Gewinner ist O\n")
+                active = False
+                break
+
+            # switch player
+            if player == "X":
+                player = "O"
+            elif player == "O":
+                player = "X"
 
 
 

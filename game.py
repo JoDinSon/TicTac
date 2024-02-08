@@ -27,7 +27,8 @@ class Board():
                 if self.cells[i][j] != " ":
                     count = count + 1
 
-        print(count)
+        #print(count)
+        print(self.cells)
         if count == 9:
             return True
         else:
