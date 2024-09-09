@@ -9,19 +9,16 @@ Features:
     Einfache und intuitive Benutzeroberfläche
     Automatische Gewinnerkennung
 
-Geplant:
+Verbesserungsmöglichkeiten:
 
     Spiel gegen den Computer
     Möglichkeit Spiel neu zu starten
         
 
-Hinweis:
-
-Dieses Projekt befindet sich noch in einem frühen Entwicklungsstadium. Es ist möglich, dass Fehler oder Bugs vorhanden sind.
 
 Dokumentation und Commit Messages:
 
-In diesem Projekt habe ich meine ersten Gehversuche mit Codedokumentation und Commit Messages gemacht. Dabei habe ich mich noch nicht mit Best Practices oder ähnlichem befasst. Die Dokumentation und die Commit Messages sind daher vermutlich alles andere als perfekt.
+In diesem Projekt habe ich meine ersten Gehversuche mit Codedokumentation und Commit Messages gemacht.
 
 Ich freue mich über Feedback und Verbesserungsvorschläge!
 
